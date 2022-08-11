@@ -1,11 +1,11 @@
 let playerScore = 0;
 let computerScore = 0;
 
-function playerPlay() {
-    let input = prompt('Choose your weapon. Rock, Paper or Scissors.');
-    input = input.toLowerCase(); //make sure input is in the right format
-    return playerSelection = input;
-}
+// function playerPlay() {
+//     let input = prompt('Choose your weapon. Rock, Paper or Scissors.');
+//     input = input.toLowerCase(); //make sure input is in the right format
+//     return playerSelection = input;
+// }
 
 
 function computerPlay() { // make computer pick rock paper or scissors randomly
@@ -18,14 +18,15 @@ function computerPlay() { // make computer pick rock paper or scissors randomly
     else if (computerSelection === 3) {
         computerSelection ="scissors"
     }
+    console.log(computerSelection);
     return computerSelection;
 }
 
 function playRound(playerSelection, computerSelection) { //make function that plays a round of rock paper scissors
     computerSelection = computerPlay();
-    playerSelection = playerPlay();
-    console.log(computerSelection);
-    console.log(playerSelection);
+    // playerSelection = playerPlay();
+    console.log("computer played " + computerSelection);
+    console.log("player played " + playerSelection);
     if (playerSelection === computerSelection) { //if player choice is equal to computer choice return tie
         alert('Tie Game!');
         console.log('Computer has ' + computerScore + ' points.');
@@ -49,7 +50,8 @@ function playRound(playerSelection, computerSelection) { //make function that pl
         playerScore += 1;
         console.log('Computer has ' + computerScore + ' points.');
         console.log('You have ' + playerScore + ' points.');
-    } else alert("That's not a weapon!");
+    } 
+    // else alert("That's not a weapon!");
 
 }
 
@@ -59,17 +61,25 @@ function scoreReset() {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) { //play 5 rounds
-        playRound();
-    }
-    if (playerScore == computerScore) {
-        alert("It's all square. Draw. Let's go again!");
-    } else if ( playerScore > computerScore) {
-        alert("You've beaten the computer! Well Done! Let's go again!");
-    } else if ( playerScore < computerScore) {
-        alert("Computer wins. You are a disgrace. Let's go again!")
-    }
-    scoreReset();
-    game();
+    const buttons = document.querySelectorAll('#div');
+    buttons.forEach((div) => {
+        div.addEventListener('click', () => {
+            playerSelection = div.className;
+            console.log(playerSelection);
+            const computerSelection = computerPlay();
+        })
+    })
+    // for (let i = 0; i < 5; i++) { //play 5 rounds
+    playRound();
+    // // }
+    // if (playerScore == computerScore) {
+    //     alert("It's all square. Draw. Let's go again!");
+    // } else if ( playerScore > computerScore) {
+    //     alert("You've beaten the computer! Well Done! Let's go again!");
+    // } else if ( playerScore < computerScore) {
+    //     alert("Computer wins. You are a disgrace. Let's go again!")
+    // }
+    // scoreReset();
+    // game();
 }
 game();
