@@ -61,12 +61,12 @@ function scoreReset() {
 }
 
 function game() {
+    const computerSelection = computerPlay();
     const buttons = document.querySelectorAll('#div');
     buttons.forEach((div) => {
         div.addEventListener('click', () => {
             playerSelection = div.className;
             console.log(playerSelection);
-            const computerSelection = computerPlay();
         })
     })
     // for (let i = 0; i < 5; i++) { //play 5 rounds
