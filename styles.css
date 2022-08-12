@@ -1,5 +1,5 @@
 * {
-    background-color: black;
+    background-color: rgb(2, 182, 191);
     margin-left: 50px;
     margin-right: 50px;
 }
@@ -19,4 +19,10 @@
     border-radius: 10px;
     justify-content: center;
     align-items: center;
+    font-family: 'Fredoka One', cursive;
 }
+
+/* //scoreboard font {
+    font-family: 'Fredoka One', cursive;
+
+} */
