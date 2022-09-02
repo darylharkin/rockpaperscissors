@@ -1,5 +1,5 @@
 * {
-    background-color: rgb(2, 182, 191);
+    background-color:lightslategray;
     margin-left: 50px;
     margin-right: 50px;
     font-family: 'Fredoka One', cursive;
@@ -7,12 +7,13 @@
 
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content:center;
     margin-top: 50px;
 }
 
-.container div {
+.playerButtons #div {
     display: flex;
+    font-size: 50px;
     height: 150px;
     width: 150px;
     background-color: plum;
@@ -21,6 +22,28 @@
     justify-content: center;
     align-items: center;
     font-family: 'Fredoka One', cursive;
+    margin: 20px;
+}
+
+.cpuButtons div {
+    display: flex;
+    font-size: 50px;
+    height: 150px;
+    width: 150px;
+    background-color: plum;
+    border: black solid 5px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fredoka One', cursive;
+    margin: 20px;
+}
+
+.played {
+    transform: scale(1.1);
+    border: #ffc600 solid 5px;
+    box-shadow: 0 0 1rem #ffc600;
+
 }
 
 /* //scoreboard font {

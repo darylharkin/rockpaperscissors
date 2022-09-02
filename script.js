@@ -1,21 +1,27 @@
 let playerScore = 0;
 let computerScore = 0;
 let battleMessage = ''
+document.getElementById("reset").addEventListener("click", scoreReset);
 
 function computerPlay() { // make computer pick rock paper or scissors randomly
     var computerSelection = Math.floor(Math.random() * 3) + 1; //picks a random number between 1 and 3
     if (computerSelection === 1) { //assign each number to a game move
-        computerSelection = "rock" }
+        computerSelection = "rock"
+        document.getElementById("cpuRock").classList.add('played');
+    }
     else if (computerSelection === 2) {
         computerSelection = "paper"
+        document.getElementById("cpuPaper").classList.add('played');
     }
     else if (computerSelection === 3) {
         computerSelection ="scissors"
+        document.getElementById("cpuScissors").classList.add('played');
     }
     return computerSelection;
 }
 
 function playRound(playerSelection) { //make function that plays a round of rock paper scissors
+    removeHighlight();
     computerSelection = computerPlay();
     console.log("computer played " + computerSelection);
     console.log("player played " + playerSelection);
@@ -45,22 +51,32 @@ function playRound(playerSelection) { //make function that plays a round of rock
 }
 
 function updateScoreboard() {
+    console.log("updateScoreboard")
     document.getElementById("scoreboardCpu").textContent = "CPU: " + computerScore; 
     document.getElementById("scoreboardPlayer").textContent = "Player1: " + playerScore;
     checkScore();
 }
 
 function updateBattleMessage() {
+    console.log("updateBattleMessage")
     document.getElementById("bmContainer").textContent = battleMessage;
 }
 
-function tieRound() {
-
+function removeHighlight() {
+    console.log("removeHighlight")
+    document.getElementById("cpuRock").classList.remove('played');
+    document.getElementById("cpuPaper").classList.remove('played');
+    document.getElementById("cpuScissors").classList.remove('played');
 }
 
 function scoreReset() {
     playerScore = 0;
     computerScore = 0;
+    battleMessage = 'Rock Paper Scissors';
+    console.log("scoreReset");
+    updateBattleMessage();
+    updateScoreboard();
+    removeHighlight();
 }
 
 function game() {
@@ -76,14 +92,14 @@ function game() {
 function checkScore() {
     if ( playerScore === 5) {
         battleMessage = "Player1 Wins!"
+        // alert("You've beaten the computer! Well Done! Let's go again!");
         updateBattleMessage();
-        alert("You've beaten the computer! Well Done! Let's go again!");
-        location.reload();
+        // location.reload();
     } else if ( computerScore === 5) {
         battleMessage = "CPU Wins!"
+        // alert("Computer wins. You are a disgrace. Let's go again!")
         updateBattleMessage();
-        alert("Computer wins. You are a disgrace. Let's go again!")
-        location.reload();
+        // location.reload();
     }
 }
 
