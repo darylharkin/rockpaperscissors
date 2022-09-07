@@ -11,28 +11,39 @@
     <title>Rock-v-Paper-v-Scissors</title>
 </head>
 <body>
+    <div class="title">
+        <ul>
+            <li>rock</li>
+            <li>paper</li>
+            <li>scissors</li>
+        </ul>
+    </div>
     <div class="container">
         <div class = "playerButtons">
+            <h5>player 1</h5>
             <div id = "div" class="rock">👊</div>
             <div id = "div" class="paper">✋</div>
             <div id = "div" class="scissors">✌️</div>
         </div>
         <div class="cpuButtons">
+            <h5>cpu</h5>
             <div id = "cpuRock">👊</div>
             <div id = "cpuPaper">✋</div>
             <div id = "cpuScissors">✌️</div>
         </div>
     </div>
-    <div class="scoreboardContainer">
-        <div id="scoreboardPlayer">Player1 : 0</div>
-        <div id="scoreboardCpu">CPU : 0</div>
+    <div class="hud">
+        <div class="scoreboardContainer">
+            <div id="scoreboardPlayer">Player1 : 0</div>
+            <div id="scoreboardCpu">CPU : 0</div>
+        </div>
+        <div id="bmContainer">
+            ROCK PAPER SCISSORS
+        </div>
     </div>
-    <div id="bmContainer">
-        ROCK PAPER SCISSORS
-    </div>
-    <div class="resetContainer">
-        <button id="reset">Reset</button>
-    </div>
+        <div class="resetContainer">
+            <button id="reset">Reset</button>
+        </div>
 </body>
 <script defer src="script.js"></script>
 </html>
